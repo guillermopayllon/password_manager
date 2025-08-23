@@ -2,20 +2,22 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable; // Importar para 2FA
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany; // Importar para la relación HasMany
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail // Mantener si tienes verificación de email
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $fillable = [
         'name',
@@ -26,23 +28,31 @@ class User extends Authenticatable
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var list<string>
+     * @var array<int, string>
      */
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_secret', // Ocultar el secreto 2FA
+        'two_factor_recovery_codes', // Ocultar los códigos de recuperación 2FA
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast.
      *
-     * @return array<string, string>
+     * @var array<string, string>
      */
-    protected function casts(): array
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    /**
+     * Get the passwords for the user.
+     * Un usuario puede tener muchas contraseñas.
+     */
+    public function passwords(): HasMany
     {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
+        return $this->hasMany(Password::class);
     }
 }

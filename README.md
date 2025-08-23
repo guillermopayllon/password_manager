@@ -25,7 +25,7 @@ Para este proyecto, hemos elegido un conjunto de tecnologías de vanguardia que 
 
 <li>Backend</li>
 <ul>
-</li>Laravel Framework: El corazón de nuestra aplicación. Nos proporciona una base sólida para la autenticación, las migraciones de la base de datos y la arquitectura MVC.</li>
+<li>Laravel Framework: El corazón de nuestra aplicación. Nos proporciona una base sólida para la autenticación, las migraciones de la base de datos y la arquitectura MVC.</li>
 
 <li>PHP: El lenguaje de programación principal.</li>
 </ul>
@@ -40,7 +40,8 @@ Para este proyecto, hemos elegido un conjunto de tecnologías de vanguardia que 
 
 <li>JavaScript: Para funcionalidades menores del lado del cliente.</li>
 </ul>
-Base de Datos
+<ul>
+<li>Base de Datos</li>
 <ul>
 <li>MySQL: Un sistema de gestión de bases de datos relacionales robusto y ampliamente utilizado.</li>
 </ul>
