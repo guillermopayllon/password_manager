@@ -42,6 +42,8 @@ Frontend
 Base de Datos
 <ul>
 <li>MySQL: Un sistema de gestión de bases de datos relacionales robusto y ampliamente utilizado.</li>
+</ul>
+</ul>
 
 <hr>
 
