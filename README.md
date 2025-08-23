@@ -29,8 +29,8 @@ Para este proyecto, hemos elegido un conjunto de tecnologías de vanguardia que 
 
 <li>PHP: El lenguaje de programación principal.</li>
 </ul>
-</ul>
-Frontend
+
+<li>Frontend</li>
 <ul>
 <li>Laravel Livewire: Nos permite construir interfaces de usuario dinámicas y reactivas de forma sencilla, eliminando la necesidad de escribir mucho JavaScript.</li>
 
