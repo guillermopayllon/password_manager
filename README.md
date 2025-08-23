@@ -52,9 +52,12 @@ Clonar el repositorio de GitHub:
 
 Bash
 
-git clone https://github.com/tu-usuario/gestor-de-contrasenas.git
+git clone https://github.com/tu-usuario/gestor-de-contrasenas.git 
+<br>
 cd gestor-de-contrasenas
-Instalar las dependencias de Composer:
+<br>
+
+## Instalar las dependencias de Composer:
 
 Bash
 
@@ -70,11 +73,13 @@ Generar la clave de la aplicación:
 Bash
 
 php artisan key:generate
+
 Ejecutar las migraciones de la base de datos:
 
 Bash
 
 php artisan migrate
+
 Instalar las dependencias de Node.js y compilar los assets:
 
 Bash
