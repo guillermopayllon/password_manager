@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail; // COMENTADO: Desactivamos la verificación de email por ahora
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable; // Importar para 2FA
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Sanctum\HasApiTokens; // Importar para API Tokens
 use Illuminate\Database\Eloquent\Relations\HasMany; // Importar para la relación HasMany
 
-class User extends Authenticatable implements MustVerifyEmail // Mantener si tienes verificación de email
+class User extends Authenticatable // Aquí ya NO implementa MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable;
 
